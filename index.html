@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Second Rate Geniuses</title>
+
+<link href="static/css/reset.css" rel="Stylesheet" type="text/css" media="screen" />
+<link href="static/css/text.css" rel="Stylesheet" type="text/css" media="screen" />
+<link href="static/css/960.css" rel="Stylesheet" type="text/css" media="screen" />
+<link href="static/css/base.css" rel="Stylesheet" type="text/css" media="screen" />
+
+</head>
+
+<body>
+
+<div id="header">
+  <div class="banner">
+    <a class="logo" alt="logo" href=""><img src="static/img/logo.png" /></a>
+    <h1 id="tagline" class="shadow">
+      <span class="current">We make websites go.</span>
+      <span class="hidden" style="display: none;">As decent as it gets.</span>
+      <span class="hidden" style="display: none;">We're <i><b>pretty</b></i> good.</span>
+    </h1>
+  </div>
+</div>
+
+<div id="content" class="container_12">
+  <div class="grid_4 side">
+    <p class="whatwedo">In concert with your business and technical teams, we take your site from concept to production.  On the way we instill <strong class="keywords">sustainable development</strong> processes that promote <strong class="keywords">safe, rapid deployment</strong>.  Our clients think we're &ldquo;<strong class="quote">thoughtful craftsmen</strong>&rdquo; and &ldquo;<strong class="quote">a pleasure to work with</strong>&rdquo;.
+    <p class="whatwedo">
+    We're friendly and plain-speaking so give us a call at (415) 498-0279 or
+    <a href="mailto:info@2ndrategeniuses.com">shoot us an email</a>.
+    </p>
+    <ul id="team">
+      <li>
+        <a href="mailto:alex@2ndrategeniuses.com">
+          <img src="static/img/alex.jpg" width="125" height="125" />
+          <div>Alex</div>
+        </a>
+      <li>
+        <a href="mailto:kasima@2ndrategeniuses.com">
+          <img src="static/img/kasima.jpg" width="125" height="125" />
+          <div>Kasima</div>
+        </a>
+      </li>
+    </ul>
+    <p>
+      We use and support Open Source technologies.  Recently we've been working with
+      <a href="http://rubyonrails.org">Ruby on Rails</a>, <a href="http://djangoproject.com">Django</a>, and
+      <a href="http://nodejs.org">node.js</a>.  You can <a href="http://github.com/kasima">find</a> <a href="http://github.com/fromagie">us</a> on <a href="http://github.com">github</a> or <a href="http://2rg.tumblr.com">tumblr</a>.
+    </p>
+  </div>
+
+  <div class="grid_8 pastwork">
+    <ul class="samples">
+      <li class="sample">
+        <h3>A new platform for tracking your personal health</h3>
+        <a href="http://wellnessfx.com" target="_blank">
+          <img class="screenshot" src="static/img/screenshot_wellnessfx.png" />
+        </a>
+        <p class="note">In partnership with <a href="http://carbonfive.com">Carbon Five</a></p>
+      </li>
+      <li class="sample">
+        <h3>A simple tool for constructing screenplays</h3>
+        <a href="http://loglineapp.com" target="_blank">
+          <img class="screenshot" src="static/img/screenshot_logline.png" />
+        </a>
+        <p class="note">In partnership with <a href="http://parkerwallace.com">Parker Wallace</a></p>
+      </li>
+      <li class="sample">
+        <h3>Booking luxury &amp; boutique hotels</h3>
+        <a href="http://tablethotels.com" target="_blank">
+          <img class="screenshot" src="static/img/screenshot_tablet.png" />
+          </a>
+      </li>
+      <li class="sample">
+        <h3>Purveying the largest selection of sheetmusic</h3>
+        <a href="http://sheetmusicplus.com" target="_blank">
+          <img class="screenshot" src="static/img/screenshot_smp.png" /></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="banner">Copyright 2010 by <a href="/">2nd Rate Geniuses</a>, unless otherwise noted.</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-76175-2");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript">
+  crossfadeNewTagline = function(selector, fadeSpeed) {
+    return function() {
+        var current = $(selector).children('span.current');
+
+        var other_taglines = $(selector).children('span.hidden');
+        var new_tagline_index = Math.floor(Math.random() * other_taglines.length);
+        var new_tagline = other_taglines.eq(new_tagline_index);
+
+        // Custom animations so we can specify to not queue effects
+        current.animate( {opacity: "0", queue: false}, fadeSpeed, "swing", function () { $(this).hide(); });
+        new_tagline.css("opacity", "0").animate( {opacity: "1", queue: false}, fadeSpeed ).show();
+        current.addClass('hidden'); current.removeClass('current');
+        new_tagline.addClass('current'); new_tagline.removeClass('hidden');
+    };
+  };
+
+$(document).ready(function() {
+  setInterval(crossfadeNewTagline('#tagline', 1200), 12000);
+});
+</script>
+
+</body>
+</html>
